@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class two {
     public static void main(String[] args){
         String head = "select * from students where";
@@ -15,6 +17,12 @@ public class two {
                 search.setCharAt(j, '=');
             }
             }
-            System.out.println(search);
+            String[] arr = search.toString().split(",");
+            for (int i = 0; i < arr.length; i++){
+                if(arr[i] == "null"){
+                    arr[i] = "";
+                }
+            }
+            System.out.println(Arrays.toString(arr));
     }
 }
