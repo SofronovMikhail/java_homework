@@ -76,6 +76,7 @@ public class two {
     }   
         String n = "name";
         int name = students.indexOf("name");
+        students.replace(name, name + n.length(), "Student");
         name = students.indexOf("name");
         students.replace(name, name + n.length(), "Student");
         name = students.indexOf("name");
