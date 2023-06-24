@@ -6,6 +6,7 @@ import java.util.Collection;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 import java.util.TreeMap;
 import java.util.stream.*;
@@ -22,12 +23,14 @@ public class five {
         phonebook.merge("Ivanov", "33333", (oldValue, newValue) -> oldValue + ";" + newValue);
         
         List<String> list = new ArrayList<String>(phonebook.values());
-        list.sort(Comparator.naturalOrder());
+        list.sort(Comparator.reverseOrder());
 
         for (int i = 0; i < phonebook.size(); i++){
-            for(String s: phonebook.values()){
-                if(list.get(i) == s){
-                     System.out.println(s);
+            for(Map.Entry<String, String> set :
+            phonebook.entrySet()){
+                if(list.get(i) == set.getValue()){
+                     System.out.println(set.getKey() + " = "
+                     + set.getValue());
             }
         }
         
