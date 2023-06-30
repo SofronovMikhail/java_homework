@@ -5,8 +5,14 @@ public class Shooter extends AbstractMain {
     public float rangedDamage;
     
     public Shooter (String name){
-        super(name, "Shooter", 40, -5, 5, 4, 10, 9, 5);
+        super(name, "Shooter", 40, 5, 5, 4, 10, 9, 5);
         this.accuracy = 9;
         this.rangedDamage = -6;
     } 
+    public void step() {
+        System.out.println("Headshot");
+    }
+    public String getInfo() {
+        return (type +"="+name);
+        }
 }
