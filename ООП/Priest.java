@@ -2,12 +2,13 @@ package ООП;
 
 public class Priest extends AbstractMain {
     public float heal;
-    public float religion;
+    public float mana;
+    public float curMana;
     
-    public Priest (String name, String type, float hp, float meleeDamage, float defense, float stepLength, float radiusAttack, float speed, float evasion, float heal, float religion){
-        super(name, type, hp, meleeDamage, defense, stepLength, radiusAttack, speed, evasion);
-        this.heal = heal;
-        this.religion = religion;
+    public Priest (String name){
+        super(name, "Priest", 30, -2, 3, 4, 7, 5, 2);
+        this.heal = 4;
+        this.mana = this.curMana = 10;
            
     } 
 }

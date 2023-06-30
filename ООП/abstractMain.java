@@ -4,7 +4,8 @@ public abstract class AbstractMain {
     public String name;
     public String type;
     public float hp;
-    public float meleeDamage;
+    public float curHp;
+    public float[] meleeDamage;
     public float defense;
     public float stepLength;
     public float radiusAttack;
@@ -12,7 +13,7 @@ public abstract class AbstractMain {
     public float evasion;
 
     public AbstractMain(String name, String type, float hp, float meleeDamage, float defense, float stepLength, float radiusAttack, float speed, float evasion){
-        this.name = name;
+        this.name = this.curHp = hp;
         this.type = type;
         this.radiusAttack = radiusAttack;
         this.hp = hp;
@@ -22,4 +23,8 @@ public abstract class AbstractMain {
         this.speed = speed;
         this.evasion = evasion;
 }
+    @Override
+    public String toString(){
+        return name;
+    }
 }

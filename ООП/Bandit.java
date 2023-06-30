@@ -3,9 +3,9 @@ package ООП;
 public class Bandit extends AbstractMain{
     public float agility;
     
-    public Bandit (String name, String type, float hp, float meleeDamage, float defense, float stepLength, float radiusAttack, float speed, float evasion, float agility){
-        super(name, type, hp, meleeDamage, defense, stepLength, radiusAttack, speed, evasion);
-        this.agility = agility;
+    public Bandit (String name){
+        super(name, "Bandit", 40, -7, 6, 4, 4, 7, 7);
+        this.agility = 8;
            
     } 
 }
