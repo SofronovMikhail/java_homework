@@ -4,8 +4,8 @@ package ООП;
 public class Bandit extends AbstractMain{
     public float agility;
     
-    public Bandit (String name){
-        super(name, "Bandit", 40, 7, 6, 4, 4, 7, 7);
+    public Bandit (String name, float coordinates){
+        super(name, "Bandit", 40, 7, 6, 4, 4, 7, 7, coordinates);
         this.agility = 8;
            
     } 

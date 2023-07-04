@@ -6,8 +6,8 @@ public class Mag extends AbstractMain{
     public float rangedDamage;
     public float curMana;
     
-    public Mag (String name){
-        super(name, "Mag", 30, 3, 3, 4, 10, 4, 3);
+    public Mag (String name, float coordinates){
+        super(name, "Mag", 30, 3, 3, 4, 10, 4, 3, coordinates);
         this.rangedDamage = -8;
         this.mana = this.curMana = 10;      
     } 
