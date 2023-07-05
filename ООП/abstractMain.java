@@ -13,7 +13,7 @@ public abstract class AbstractMain implements Interface{
     public float evasion;
     Coordinates coordinates = new Coordinates();
     
-    public AbstractMain(String name, String type, float hp, float meleeDamage, float defense, float stepLength, float radiusAttack, float speed, float evasion, float coordinates){
+    public AbstractMain(String name, String type, float hp, float meleeDamage, float defense, float stepLength, float radiusAttack, float speed, float evasion, float coordinates_x, float coordinates_y){
         this.name = name;
         this.type = type;
         this.radiusAttack = radiusAttack;
@@ -23,8 +23,8 @@ public abstract class AbstractMain implements Interface{
         this.stepLength = stepLength;
         this.speed = speed;
         this.evasion = evasion;
-        this.coordinates.x = coordinates;
-        this.coordinates.y = coordinates;
+        this.coordinates.x = coordinates_x;
+        this.coordinates.y = coordinates_y;
 }
     @Override
     public String toString(){
