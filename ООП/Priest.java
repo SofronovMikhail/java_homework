@@ -6,7 +6,7 @@ public class Priest extends AbstractMain {
     public float curMana;
     
     public Priest (String name, float coordinates_x, float coordinates_y){
-        super(name, "Priest", 30, 2, 3, 4, 7, 5, 2, coordinates_x, coordinates_y);
+        super(name, "Priest", 30, 2, 3, 4, 7, 6, 1, coordinates_x, coordinates_y);
         this.heal = 4;
         this.mana = this.curMana = 10;
            
