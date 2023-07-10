@@ -1,19 +1,19 @@
 package ООП;
 
+import java.util.ArrayList;
 
 public class Bandit extends AbstractMain{
-    public float agility;
     
-    public Bandit (String name, float coordinates_x, float coordinates_y){
-        super(name, "Bandit", 40, 7, 6, 4, 4, 5, 3, coordinates_x, coordinates_y);
-        this.agility = 8;
+    public Bandit (String name, float x, float y){
+        super(name, "Bandit", 40, 8, 3, 4, 1, 5, 3, x, y);
+        
            
     } 
 
-    public void step() {
+    public void step(ArrayList<AbstractMain> teamOpp, ArrayList<AbstractMain> teamMy) {
         System.out.println("die quickly");
     }
     public String getInfo() {
-        return (type +"="+name + "(" + coordinates.x +","+ coordinates.y + ")");
+        return (type +"="+name + "(" + coordinates.x +","+ coordinates.y + ")" + " " + "hp="+curHp);
         }
 }

@@ -1,17 +1,19 @@
 package ООП;
 
+import java.util.ArrayList;
+
 public class Spearman extends AbstractMain{
     public float endurance;
     
-    public Spearman (String name, float coordinates_x, float coordinates_y){
-        super(name, "Spearman", 50, 8, 8, 5, 5, 4, 1, coordinates_x, coordinates_y);
+    public Spearman (String name, float x, float y){
+        super(name, "Spearman", 50, 10, 6, 5, 5, 4, 1, x, y);
         this.endurance = 8;
            
     } 
-    public void step() {
+    public void step(ArrayList<AbstractMain> teamOpp, ArrayList<AbstractMain> teamMy) {
         System.out.println("who's on me");
     }
     public String getInfo() {
-        return (type +"="+name + "(" + coordinates.x +","+ coordinates.y + ")");
+        return (type +"="+name + "(" + coordinates.x +","+ coordinates.y + ")" + " " + "hp="+curHp);
         }
 }
