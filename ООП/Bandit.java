@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Bandit extends AbstractMain{
     
     public Bandit (String name, float x, float y){
-        super(name, "Bandit", 40, 8, 3, 4, 1, 5, 3, x, y);
+        super(name, "Bandit", 40, 8, 3, 4, 1, 4, 3, x, y);
         
            
     } 

@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Peasant extends AbstractMain {
     
     public Peasant (String name, float x, float y){
-        super(name, "Peasant", 30, 4, 2, 7, 5, 7, 1, x, y);
+        super(name, "Peasant", 30, 4, 2, 7, 5, 2, 1, x, y);
            
 }
 public void step(ArrayList<AbstractMain> teamOpp, ArrayList<AbstractMain> teamMy) {

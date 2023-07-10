@@ -8,7 +8,7 @@ public class Priest extends AbstractMain {
     public float curMana;
     
     public Priest (String name, float x, float y){
-        super(name, "Priest", 30, 2, 3, 4, 7, 6, 1, x, y);
+        super(name, "Priest", 30, 2, 3, 4, 7, 1, 1, x, y);
         this.heal = 4;
         this.mana = this.curMana = 10;
            

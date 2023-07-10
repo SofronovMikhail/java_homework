@@ -7,7 +7,7 @@ public class Shooter extends AbstractMain {
     public float rangedDamage;
     public int arrows;
     public Shooter (String name, float x, float y){
-        super(name, "Shooter", 40, 0, 3, 4, 9, 3, 2, x, y);
+        super(name, "Shooter", 40, 0, 3, 4, 9, 5, 2, x, y);
         this.rangedDamage = 9;
         this.arrows = 5;
     } 

@@ -6,7 +6,7 @@ public class Spearman extends AbstractMain{
     public float endurance;
     
     public Spearman (String name, float x, float y){
-        super(name, "Spearman", 50, 10, 6, 5, 5, 4, 1, x, y);
+        super(name, "Spearman", 50, 10, 6, 5, 5, 3, 1, x, y);
         this.endurance = 8;
            
     } 

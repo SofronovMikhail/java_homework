@@ -9,7 +9,7 @@ public class Mag extends AbstractMain{
     public float curMana;
     
     public Mag (String name, float x, float y){
-        super(name, "Mag", 30, 0, 1, 4, 9, 1, 0, x, y);
+        super(name, "Mag", 30, 0, 1, 4, 9, 7, 0, x, y);
         this.rangedDamage = 10;
         this.mana = this.curMana = 10;      
     } 

@@ -8,7 +8,7 @@ public class Arbalester extends AbstractMain {
     public int arrows;
     
     public Arbalester (String name, float x, float y){
-        super(name, "Arbalester", 40, 0, 3, 0, 9, 2, 2, x, y);
+        super(name, "Arbalester", 40, 0, 3, 0, 9, 6, 2, x, y);
         this.rangedDamage = 9;
         this.arrows = 5;
        
