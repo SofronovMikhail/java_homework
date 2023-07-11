@@ -2,6 +2,7 @@ package ООП;
 
 import java.util.ArrayList;
 import java.util.Random;
+import java.util.Scanner;
 
 import ООП.Units.AbstractMain;
 import ООП.Units.Arbalester;
@@ -31,7 +32,12 @@ public class Main {
         }
       team1.forEach(n -> System.out.println(n.getInfo()));
       team2.forEach(n -> System.out.println(n.getInfo()));
-
+      
+      Scanner in = new Scanner(System.in);
+      while (true){
+        Viev.view();
+        in.nextLine();
+      }
     }
       private static ArrayList<AbstractMain> team(int x){
 
@@ -63,13 +69,17 @@ public class Main {
           }
         }
         return newTeam;
+
       }  
           private static String getName(){
         String randomName = String.valueOf(Names.values()[new Random().nextInt(Names.values().length)]);
         return randomName;
       }  
 
-        }
+      
+      }
+
+        
       
       
       
