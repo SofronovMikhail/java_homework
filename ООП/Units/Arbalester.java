@@ -1,4 +1,4 @@
-package ООП;
+package ООП.Units;
 
 import java.util.ArrayList;
 
@@ -16,13 +16,18 @@ public class Arbalester extends AbstractMain {
 
 public void step(ArrayList<AbstractMain> teamOpp, ArrayList<AbstractMain> teamMy) {
     if(hp > 0 || arrows > 0){
-    System.out.println("who needs bolts");
     AbstractMain opponent = opponent(teamOpp);
-    arrows -= 1;
+    if(arrows <= 3){
     for (AbstractMain elem : teamMy){
-        if(elem.type == "Peasant" && elem.curHp > 0){arrows = 5;}  
+        if(elem.type == "Peasant" && elem.curHp > 0 && elem.stepLength == 0){
+            arrows = 5;
+            elem.stepLength = 1;
+            break;
+        }  
     }
-    if(length(teamOpp) > 5){opponent.curHp = (float) ((opponent.curHp + opponent.evasion + opponent.defense) - (rangedDamage / 0.7));}
+    }
+    if(length(teamOpp) > 5){
+    opponent.curHp = (float) ((opponent.curHp + opponent.evasion + opponent.defense) - (rangedDamage / 0.7));}
     opponent.curHp = (opponent.curHp + opponent.evasion + opponent.defense) -rangedDamage;
     arrows -= 1;
     }

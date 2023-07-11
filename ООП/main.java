@@ -1,33 +1,38 @@
 package ООП;
 
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Random;
 
-public class Main {
-    public static void main(String[] args) {
-      
+import ООП.Units.AbstractMain;
+import ООП.Units.Arbalester;
+import ООП.Units.Bandit;
+import ООП.Units.Mag;
+import ООП.Units.Names;
+import ООП.Units.Peasant;
+import ООП.Units.Priest;
+import ООП.Units.Shooter;
+import ООП.Units.Spearman;
 
-      ArrayList<AbstractMain> team1 = team(1);
-      ArrayList<AbstractMain> team2 = team(10);
-      
+public class Main {
+  public static ArrayList<AbstractMain> team1 = team(1);
+  public static ArrayList<AbstractMain> team2 = team(10);
+  public static ArrayList<AbstractMain> allTeam = new ArrayList<>();
+    public static void main(String[] args) {      
+
       for(int i = 7; i > 0; i--){
         for(int j = 0; j < 10; j++){
           if(team1.get(j).speed == i){
-            team1.get(j).step(team2, team1);
+            allTeam.add(team1.get(j));
           }
           if(team2.get(j).speed == i){
-            team2.get(j).step(team1, team2);
+            allTeam.add(team2.get(j));
+          }
           }
         }
-        
-      }
       team1.forEach(n -> System.out.println(n.getInfo()));
       team2.forEach(n -> System.out.println(n.getInfo()));
 
     }
-
-
       private static ArrayList<AbstractMain> team(int x){
 
         ArrayList<AbstractMain> newTeam = new ArrayList<>();
@@ -58,16 +63,15 @@ public class Main {
           }
         }
         return newTeam;
-          
-          
-        }
-      
-    
-      private static String getName(){
+      }  
+          private static String getName(){
         String randomName = String.valueOf(Names.values()[new Random().nextInt(Names.values().length)]);
         return randomName;
       }  
 
+        }
       
-}
+      
+      
+
     

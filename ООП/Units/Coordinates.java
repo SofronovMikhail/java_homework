@@ -1,4 +1,4 @@
-package ООП;
+package ООП.Units;
 
 public class Coordinates {
     public float x;

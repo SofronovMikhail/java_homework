@@ -1,20 +1,19 @@
-package ООП;
+package ООП.Units;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public abstract class AbstractMain implements Interface{
-    public String name;
-    public String type;
-    public float hp;
-    public float curHp;
-    public float meleeDamage;
-    public float defense;
-    public float stepLength;
-    public float radiusAttack;
+    protected String name;
+    protected String type;
+    protected float hp;
+    protected float curHp;
+    protected float meleeDamage;
+    protected float defense;
+    protected float stepLength;
+    protected float radiusAttack;
     public float speed;
-    public float evasion;
-    Coordinates coordinates;
+    protected float evasion;
+    public Coordinates coordinates;
     
     
     public AbstractMain(String name, String type, float hp, float meleeDamage, float defense, float stepLength, float radiusAttack, float speed, float evasion, float x, float y){
@@ -63,6 +62,8 @@ public abstract class AbstractMain implements Interface{
           }
           return opponent;
     }
-     
+     public float curHp(){
+        return curHp;
+     }
     
 }
