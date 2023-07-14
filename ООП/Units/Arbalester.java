@@ -15,8 +15,8 @@ public class Arbalester extends AbstractMain {
     } 
 
 public void step(ArrayList<AbstractMain> teamOpp, ArrayList<AbstractMain> teamMy) {
-    if(hp > 0 || arrows > 0){
-    AbstractMain opponent = opponent(teamOpp);
+    if(curHp > 0 || arrows > 0){
+    AbstractMain opponent =coordinates.opponent(teamOpp);
     if(arrows <= 3){
     for (AbstractMain elem : teamMy){
         if(elem.type == "Peasant" && elem.curHp > 0 && elem.stepLength == 0){
@@ -26,7 +26,7 @@ public void step(ArrayList<AbstractMain> teamOpp, ArrayList<AbstractMain> teamMy
         }  
     }
     }
-    if(length(teamOpp) > 5){
+    if(coordinates.length(teamOpp) > 5){
     opponent.curHp = (float) ((opponent.curHp + opponent.evasion + opponent.defense) - (rangedDamage / 0.7));}
     opponent.curHp = (opponent.curHp + opponent.evasion + opponent.defense) -rangedDamage;
     arrows -= 1;

@@ -14,6 +14,7 @@ public abstract class AbstractMain implements Interface{
     public float speed;
     protected float evasion;
     public Coordinates coordinates;
+
     
     
     public AbstractMain(String name, String type, float hp, float meleeDamage, float defense, float stepLength, float radiusAttack, float speed, float evasion, float x, float y){
@@ -27,6 +28,7 @@ public abstract class AbstractMain implements Interface{
         this.speed = speed;
         this.evasion = evasion;
         this.coordinates = new Coordinates(x, y);
+        
     
 }
     @Override
@@ -34,7 +36,7 @@ public abstract class AbstractMain implements Interface{
         return name;
     }
 
-    private float leng(float x1, float y1, float x2, float y2){
+   /* private float leng(float x1, float y1, float x2, float y2){
         float leng = (float) Math.sqrt((y2 - y1) * (y2 - y1) + (x2 - x1) * (x2 - x1));
         return leng;
       }
@@ -43,7 +45,7 @@ public abstract class AbstractMain implements Interface{
         float min = 11;
         AbstractMain opponent = team.get(0);
         for(int i = 0; i < team.size(); i++){
-              if(min > leng(coordinates.x, coordinates.y, team.get(i).coordinates.x, team.get(i).coordinates.y)){
+              if(min > leng(coordinates.x, coordinates.y, team.get(i).coordinates.x, team.get(i).coordinates.y) && team.get(i).curHp > 0){
                  min = leng(coordinates.x, coordinates.y, team.get(i).coordinates.x, team.get(i).coordinates.y);
                 opponent = team.get(i);
                 }
@@ -60,8 +62,8 @@ public abstract class AbstractMain implements Interface{
                 opponent = min;
                 }
           }
-          return opponent;
-    }
+          return opponent; 
+    } */
      public float curHp(){
         return curHp;
      }

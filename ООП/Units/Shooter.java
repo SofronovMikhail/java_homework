@@ -12,14 +12,14 @@ public class Shooter extends AbstractMain {
         this.arrows = 5;
     } 
     public void step(ArrayList<AbstractMain> teamOpp, ArrayList<AbstractMain> teamMy) {
-        if(hp > 0 || arrows > 0){
+        if(curHp > 0 || arrows > 0){
         System.out.println("who needs bolts");
-        AbstractMain opponent = opponent(teamOpp);
+        AbstractMain opponent = coordinates.opponent(teamOpp);
         arrows -= 1;
         for (AbstractMain elem : teamMy){
             if(elem.type == "Peasant" && elem.curHp > 0){arrows = 5;}  
         }
-        if(length(teamOpp) > 5){opponent.curHp = (float) ((opponent.curHp + opponent.evasion + opponent.defense) - (rangedDamage / 0.8));}
+        if(coordinates.length(teamOpp) > 5){opponent.curHp = (float) ((opponent.curHp + opponent.evasion + opponent.defense) - (rangedDamage / 0.8));}
         opponent.curHp = (opponent.curHp + opponent.evasion + opponent.defense) -rangedDamage;
         arrows -= 1;
         }

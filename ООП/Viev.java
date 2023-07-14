@@ -1,7 +1,6 @@
 package ООП;
 
 import ООП.Units.AbstractMain;
-
 import java.util.Collections;
 
 public class Viev {

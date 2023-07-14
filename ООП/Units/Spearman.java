@@ -11,8 +11,25 @@ public class Spearman extends AbstractMain{
            
     } 
     public void step(ArrayList<AbstractMain> teamOpp, ArrayList<AbstractMain> teamMy) {
-        System.out.println("who's on me");
+        AbstractMain opponent =coordinates.opponent(teamOpp);
+        if(curHp > 0){
+            if((opponent.coordinates.y - coordinates.y) > 0 && opponent.coordinates.x != coordinates.x){
+                coordinates.stepForward(teamOpp, teamMy);
+            }
+            if((opponent.coordinates.y - coordinates.y) < 0 && opponent.coordinates.x != coordinates.x){
+                coordinates.stepBack(teamOpp, teamMy);
+            }
+            if((opponent.coordinates.x - coordinates.x) < 0 && opponent.coordinates.y == coordinates.y){
+                coordinates.stepLeft(teamOpp, teamMy);
+            }
+            if((opponent.coordinates.x - coordinates.x) > 0 && opponent.coordinates.y == coordinates.y){
+                coordinates.stepRight(teamOpp, teamMy);
+            }
+
+            opponent.curHp = (opponent.curHp + opponent.evasion + opponent.defense) - meleeDamage;
+        }
     }
+    
     public String getInfo() {
         return (type +"="+name + "(" + coordinates.x +","+ coordinates.y + ")" + " " + "hp="+curHp);
         }

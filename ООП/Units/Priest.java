@@ -9,13 +9,24 @@ public class Priest extends AbstractMain {
     
     public Priest (String name, float x, float y){
         super(name, "Priest", 30, 2, 3, 4, 7, 1, 1, x, y);
-        this.heal = 4;
+        this.heal = 10;
         this.mana = this.curMana = 10;
            
     } 
+   
     public void step(ArrayList<AbstractMain> teamOpp, ArrayList<AbstractMain> teamMy) {
-        System.out.println("who to save");
+        if(curHp > 0 || curMana > 0){
+        if(curMana < 10){curMana  += 2;}
+        for (AbstractMain elem : teamMy){
+            if(elem.curHp <= 10){
+                elem.curHp += heal;
+                break;
+            }
+        }
+       
     }
+    }
+
     public String getInfo() {
         return (type +"="+name + "(" + coordinates.x +","+ coordinates.y + ")" + " " + "hp="+curHp);
         }
