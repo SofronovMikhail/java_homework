@@ -2,6 +2,8 @@ package ООП;
 
 import java.util.ArrayList;
 import java.util.Random;
+import java.util.Scanner;
+
 import ООП.Units.AbstractMain;
 import ООП.Units.Arbalester;
 import ООП.Units.Bandit;
@@ -28,41 +30,53 @@ public class Main {
           }
           }
         }
-      team1.forEach(n -> System.out.println(n.getInfo()));
-      team2.forEach(n -> System.out.println(n.getInfo()));
-      
-    
-     
-        Viev.view();
-        
-      
+    try (Scanner in = new Scanner(System.in)) {
+      while(true){
+          Viev.view();
+          in.nextLine();
+          for (AbstractMain hero : allTeam) {
+            if(team2.contains(hero)){
+              hero.step(team1, team2);
+            }
+            else{hero.step(team2, team1);}
+          }
+          if(gameOver(team1) == false){
+            System.out.println("team2 win");
+            break;
+          }  
+          if(gameOver(team2) == false){
+            System.out.println("team1 win");
+            break;
+          }        
+        }
     }
-      private static ArrayList<AbstractMain> team(int y){
+    }
+      private static ArrayList<AbstractMain> team(int x){
 
         ArrayList<AbstractMain> newTeam = new ArrayList<>();
         Random random = new Random();
         for(int i = 0; i < 10; i++){
           switch(random.nextInt(0, 7)){
             case 1:
-              newTeam.add(new Mag(getName(), i+1, y));
+              newTeam.add(new Mag(getName(), x, i+1));
               break;
             case 2:
-              newTeam.add(new Peasant(getName(), i+1, y));
+              newTeam.add(new Peasant(getName(), x, i+1));
               break;
             case 3:
-             newTeam.add(new Bandit(getName(), i+1, y));
+             newTeam.add(new Bandit(getName(), x, i+1));
               break;
             case 4:
-            newTeam.add(new Shooter(getName(), i+1, y));
+            newTeam.add(new Shooter(getName(), x, i+1));
               break;
             case 5:
-            newTeam.add(new Spearman(getName(), i+1, y));
+            newTeam.add(new Spearman(getName(), x, i+1));
               break;
             case 6:
-            newTeam.add(new Arbalester(getName(), i+1, y));
+            newTeam.add(new Arbalester(getName(), x, i+1));
               break;
             default:
-            newTeam.add(new Priest(getName(), i+1, y));
+            newTeam.add(new Priest(getName(), x, i+1));
               break;
           }
         }
@@ -73,8 +87,12 @@ public class Main {
         String randomName = String.valueOf(Names.values()[new Random().nextInt(Names.values().length)]);
         return randomName;
       }  
-
-      
+      private static boolean gameOver(ArrayList<AbstractMain> team){
+        for (AbstractMain element : team) {
+          if(element.curHp() > 0){return true;}
+      }
+       return false;
+    }
       }
 
         

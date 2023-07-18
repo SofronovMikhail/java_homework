@@ -8,7 +8,7 @@ public class Arbalester extends AbstractMain {
     public int arrows;
     
     public Arbalester (String name, float x, float y){
-        super(name, "Arbalester", 40, 0, 3, 0, 9, 6, 2, x, y);
+        super(name, "Arbalester", 40, 0, 3, 0, 9, 6, 2, x, y, 0);
         this.rangedDamage = 9;
         this.arrows = 5;
        
@@ -23,7 +23,8 @@ public void step(ArrayList<AbstractMain> teamOpp, ArrayList<AbstractMain> teamMy
             arrows = 5;
             elem.stepLength = 1;
             break;
-        }  
+        }
+    else{dead = 1;} 
     }
     }
     if(coordinates.length(teamOpp) > 5){
@@ -37,6 +38,7 @@ public void step(ArrayList<AbstractMain> teamOpp, ArrayList<AbstractMain> teamMy
 public String getInfo() {
     return (type +"="+name + "(" + coordinates.x +","+ coordinates.y + ")" + " " + "hp="+curHp);
     }
+
 
 
 

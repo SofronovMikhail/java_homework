@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Bandit extends AbstractMain{
     
     public Bandit (String name, float x, float y){
-        super(name, "Bandit", 40, 8, 3, 4, 1, 4, 3, x, y);
+        super(name, "Bandit", 40, 8, 3, 4, 1, 4, 3, x, y, 0);
         
            
     } 
@@ -28,6 +28,7 @@ public class Bandit extends AbstractMain{
 
             opponent.curHp = (opponent.curHp + opponent.evasion + opponent.defense) - meleeDamage;
         }
+        else{dead = 1;} 
     }
     public String getInfo() {
         return (type +"="+name + "(" + coordinates.x +","+ coordinates.y + ")" + " " + "hp="+curHp);

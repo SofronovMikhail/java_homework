@@ -14,10 +14,11 @@ public abstract class AbstractMain implements Interface{
     public float speed;
     protected float evasion;
     public Coordinates coordinates;
+    public int dead;
 
     
     
-    public AbstractMain(String name, String type, float hp, float meleeDamage, float defense, float stepLength, float radiusAttack, float speed, float evasion, float x, float y){
+    public AbstractMain(String name, String type, float hp, float meleeDamage, float defense, float stepLength, float radiusAttack, float speed, float evasion, float x, float y, int dead){
         this.name = name;
         this.type = type;
         this.radiusAttack = radiusAttack;
@@ -28,6 +29,7 @@ public abstract class AbstractMain implements Interface{
         this.speed = speed;
         this.evasion = evasion;
         this.coordinates = new Coordinates(x, y);
+        this.dead = dead;
         
     
 }
@@ -67,5 +69,6 @@ public abstract class AbstractMain implements Interface{
      public float curHp(){
         return curHp;
      }
+
     
 }

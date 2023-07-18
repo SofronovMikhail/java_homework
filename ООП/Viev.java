@@ -30,11 +30,11 @@ public class Viev {
             for (AbstractMain human: Main.allTeam) {
                 if (human.coordinates.x == x && human.coordinates.y == y){
                     if (human.curHp() == 0) {
-                        out = "|" + (AnsiColor.ANSI_RED + human.toString().charAt(0) + AnsiColor.ANSI_RESET);
+                        out = "|" + (human.toString().charAt(0));
                         break;
                     }
-                    if (Main.team1.contains(human)) out = "|" + (AnsiColor.ANSI_GREEN + human.toString().charAt(0) + AnsiColor.ANSI_RESET);
-                    if (Main.team2.contains(human)) out = "|" + (AnsiColor.ANSI_BLUE + human.toString().charAt(0) + AnsiColor.ANSI_RESET);
+                    if (Main.team1.contains(human)) out = "|" + (human.toString().charAt(0));
+                    if (Main.team2.contains(human)) out = "|" + (human.toString().charAt(0));
                     break;
                 }
             }
@@ -42,19 +42,19 @@ public class Viev {
         }
         public static void view() {
             if (step == 1 ){
-                System.out.print(AnsiColor.ANSI_YELLOW + "First step" + AnsiColor.ANSI_RESET);
+                System.out.print("First step");
             } else {
-                System.out.print(AnsiColor.ANSI_YELLOW+ "Step " + step + AnsiColor.ANSI_RESET);
+                System.out.print("Step " + step);
             }
             step++;
             Main.allTeam.forEach((v) -> l[0] = Math.max(l[0], v.getInfo().length()));
             System.out.print("_".repeat(l[0]*2));
             System.out.println("");
             System.out.print(top10 + "    ");
-            System.out.print(AnsiColor.ANSI_GREEN+":\tGreen side"+AnsiColor.ANSI_RESET);
+            System.out.print(":\tGreen side");
             //for (int i = 0; i < l[0]-9; i++)
             System.out.print(" ".repeat(l[0]-9));
-            System.out.println(AnsiColor.ANSI_BLUE+"Blue side"+AnsiColor.ANSI_RESET);
+            System.out.println("Blue side");
             for (int i = 1; i < 11; i++) {
                 System.out.print(getChar(1, i));
             }

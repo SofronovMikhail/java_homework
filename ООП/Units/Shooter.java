@@ -7,13 +7,12 @@ public class Shooter extends AbstractMain {
     public float rangedDamage;
     public int arrows;
     public Shooter (String name, float x, float y){
-        super(name, "Shooter", 40, 0, 3, 4, 9, 5, 2, x, y);
+        super(name, "Shooter", 40, 0, 3, 4, 9, 5, 2, x, y, 0);
         this.rangedDamage = 9;
         this.arrows = 5;
     } 
     public void step(ArrayList<AbstractMain> teamOpp, ArrayList<AbstractMain> teamMy) {
         if(curHp > 0 || arrows > 0){
-        System.out.println("who needs bolts");
         AbstractMain opponent = coordinates.opponent(teamOpp);
         arrows -= 1;
         for (AbstractMain elem : teamMy){
@@ -23,6 +22,7 @@ public class Shooter extends AbstractMain {
         opponent.curHp = (opponent.curHp + opponent.evasion + opponent.defense) -rangedDamage;
         arrows -= 1;
         }
+        else{dead = 1;}
     }
     
     public String getInfo() {

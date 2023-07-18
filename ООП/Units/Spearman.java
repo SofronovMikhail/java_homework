@@ -6,7 +6,7 @@ public class Spearman extends AbstractMain{
     public float endurance;
     
     public Spearman (String name, float x, float y){
-        super(name, "Spearman", 50, 10, 6, 5, 5, 3, 1, x, y);
+        super(name, "Spearman", 50, 10, 6, 5, 5, 3, 1, x, y, 0);
         this.endurance = 8;
            
     } 
@@ -28,6 +28,7 @@ public class Spearman extends AbstractMain{
 
             opponent.curHp = (opponent.curHp + opponent.evasion + opponent.defense) - meleeDamage;
         }
+        else{dead = 1;}
     }
     
     public String getInfo() {

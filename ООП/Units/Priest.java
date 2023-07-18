@@ -8,7 +8,7 @@ public class Priest extends AbstractMain {
     public float curMana;
     
     public Priest (String name, float x, float y){
-        super(name, "Priest", 30, 2, 3, 4, 7, 1, 1, x, y);
+        super(name, "Priest", 30, 2, 3, 4, 7, 1, 1, x, y, 0);
         this.heal = 10;
         this.mana = this.curMana = 10;
            
@@ -22,9 +22,9 @@ public class Priest extends AbstractMain {
                 elem.curHp += heal;
                 break;
             }
-        }
-       
+        } 
     }
+    else{dead = 1;}
     }
 
     public String getInfo() {

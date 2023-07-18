@@ -9,7 +9,7 @@ public class Mag extends AbstractMain{
     public float curMana;
     
     public Mag (String name, float x, float y){
-        super(name, "Mag", 30, 0, 1, 0, 9, 7, 0, x, y);
+        super(name, "Mag", 30, 0, 1, 0, 9, 7, 0, x, y, 0);
         this.rangedDamage = 10;
         this.mana = this.curMana = 10;      
     } 
@@ -24,6 +24,7 @@ public class Mag extends AbstractMain{
     curMana -= 3;
     
 }
+else{dead = 1;}
 }
     public String getInfo() {
         return (type +"="+name + "(" + coordinates.x +","+ coordinates.y + ")" + " " + "hp="+curHp);
