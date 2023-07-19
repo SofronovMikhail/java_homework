@@ -1,5 +1,5 @@
 package ООП.Units;
 
 public enum Names {
-    Ivan, Stepan, Mikhail, Aleksandr, Egor, Nastia, Luba, Oksana
+    Ivan, Stepan, Mikhail, Aleksandr, Egor, Nastia, Luba, Oksana, Ulia, Damir, Zhanna, Kirill
 }

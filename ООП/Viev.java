@@ -47,7 +47,10 @@ public class Viev {
                 System.out.print("Step " + step);
             }
             step++;
-            Main.allTeam.forEach((v) -> l[0] = Math.max(l[0], v.getInfo().length()));
+            /*Main.allTeam.forEach((v) -> l[0] = Math.max(l[0], v.getInfo().length()));*/
+            for (AbstractMain v : Main.allTeam) {
+                l[0] = Math.max(l[0], v.getInfo().length());
+            }
             System.out.print("_".repeat(l[0]*2));
             System.out.println("");
             System.out.print(top10 + "    ");
