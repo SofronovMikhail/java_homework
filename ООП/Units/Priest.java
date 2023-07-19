@@ -15,16 +15,21 @@ public class Priest extends AbstractMain {
     } 
    
     public void step(ArrayList<AbstractMain> teamOpp, ArrayList<AbstractMain> teamMy) {
-        if(curHp > 0 || curMana > 0){
-        if(curMana < 10){curMana  += 2;}
-        for (AbstractMain elem : teamMy){
-            if(elem.curHp <= 10){
-                elem.curHp += heal;
-                break;
+        if(curHp > 0) {
+            if (curMana < 10) {
+                curMana += 2;
             }
-        } 
-    }
-    else{dead = 1;}
+            if (curMana >= 3) {
+                for (AbstractMain elem : teamMy) {
+                    if (elem.curHp <= 10) {
+                        elem.curHp += heal;
+                        curMana -= 3;
+                        break;
+                    }
+                }
+            }
+        }
+        else{dead = 1;}
     }
 
     public String getInfo() {

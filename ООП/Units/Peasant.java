@@ -9,8 +9,8 @@ public class Peasant extends AbstractMain {
         
 }
 public void step(ArrayList<AbstractMain> teamOpp, ArrayList<AbstractMain> teamMy) {
-   if(hp > 0){stepLength = 0;}
-   else{dead = 1;}
+    if(curHp > 0){stepLength = 0;}
+    else{dead = 1;}
 }
 public String getInfo() {
     return (type +"="+name + "(" + coordinates.x +","+ coordinates.y + ")" + " " + "hp="+curHp);

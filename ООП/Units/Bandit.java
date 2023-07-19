@@ -11,8 +11,8 @@ public class Bandit extends AbstractMain{
     } 
 
     public void step(ArrayList<AbstractMain> teamOpp, ArrayList<AbstractMain> teamMy) {
-        AbstractMain opponent =coordinates.opponent(teamOpp);
         if(curHp > 0){
+            AbstractMain opponent =coordinates.opponent(teamOpp);
             if((opponent.coordinates.y - coordinates.y) > 0 && opponent.coordinates.x != coordinates.x){
                 coordinates.stepForward(teamOpp, teamMy);
             }
@@ -25,7 +25,6 @@ public class Bandit extends AbstractMain{
             if((opponent.coordinates.x - coordinates.x) > 0 && opponent.coordinates.y == coordinates.y){
                 coordinates.stepRight(teamOpp, teamMy);
             }
-
             opponent.curHp = (opponent.curHp + opponent.evasion + opponent.defense) - meleeDamage;
         }
         else{dead = 1;} 

@@ -40,11 +40,11 @@ public class Main {
             }
             else{hero.step(team2, team1);}
           }
-          if(gameOver(team1) == false){
+          if(gameOver(team1) == true){
             System.out.println("team2 win");
             break;
           }  
-          if(gameOver(team2) == false){
+          if(gameOver(team2) == true){
             System.out.println("team1 win");
             break;
           }        
@@ -87,11 +87,15 @@ public class Main {
         String randomName = String.valueOf(Names.values()[new Random().nextInt(Names.values().length)]);
         return randomName;
       }  
-      private static boolean gameOver(ArrayList<AbstractMain> team){
+      public static boolean gameOver(ArrayList<AbstractMain> team){
+        int count = 0;
         for (AbstractMain element : team) {
-          if(element.curHp() > 0){return true;}
-      }
-       return false;
+          if(element.dead == 1){
+            count++;
+          }
+        }
+        if(count == 10){return true;}
+        return false;
     }
       }
 

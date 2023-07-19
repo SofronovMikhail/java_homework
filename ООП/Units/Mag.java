@@ -15,17 +15,19 @@ public class Mag extends AbstractMain{
     } 
    
     public void step(ArrayList<AbstractMain> teamOpp, ArrayList<AbstractMain> teamMy) {
-    if(curHp > 0 && curMana > 0){
-    if(curMana < 10){curMana  += 2;}
-    AbstractMain opponent = coordinates.opponent(teamOpp);
-    if(opponent.curHp > 0)
-    if(coordinates.length(teamOpp) > 5){opponent.curHp = (float) ((opponent.curHp + opponent.evasion + opponent.defense) - (rangedDamage / 0.7));}
-    opponent.curHp = (opponent.curHp + opponent.evasion + opponent.defense) -rangedDamage;
-    curMana -= 3;
-    
-}
-else{dead = 1;}
-}
+        if(curHp > 0){
+            if(curMana < 10){curMana  += 2;}
+            AbstractMain opponent = coordinates.opponent(teamOpp);
+            if(curMana >= 3) {
+                if (coordinates.length(teamOpp) > 5) {
+                    opponent.curHp = (float) ((opponent.curHp + opponent.evasion + opponent.defense) - (rangedDamage / 0.7));
+                }
+                opponent.curHp = (opponent.curHp + opponent.evasion + opponent.defense) - rangedDamage;
+                curMana -= 3;
+            }
+        }
+        else{dead = 1;}
+    }
     public String getInfo() {
         return (type +"="+name + "(" + coordinates.x +","+ coordinates.y + ")" + " " + "hp="+curHp);
         }
